@@ -1,5 +1,10 @@
 OpenWRT Config System
 =========
+
+[![Role](https://img.shields.io/ansible/role/56168.svg)](https://galaxy.ansible.com/pe_pe/base_packages/)
+[![Quality](https://img.shields.io/ansible/quality/56168.svg)](https://galaxy.ansible.com/pe_pe/base_packages/)
+[![CI](https://github.com/pe-pe/ansible_role_openwrt_config_system/workflows/CI/badge.svg)](https://github.com/pe-pe/ansible_role_openwrt_config_system/actions)
+
 Ansible role that configures basic system settings of OpenWRT device (mainly those which are usually defined in `/etc/config/system`).
 
 Requirements
