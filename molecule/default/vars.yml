@@ -1,0 +1,14 @@
+---
+openwrt_install_recommended_packages: false
+
+openwrt_config_system:
+  hostname: earth
+  timezone: "CET-1CEST,M3.5.0,M10.5.0/3"
+  zonename: "Europe/Warsaw"
+  conloglevel: 8
+  cronloglevel: 6
+  log_ip: 127.0.0.1
+  log_proto: udp
+  ntp:
+    enabled: 1
+    enable_server: 0

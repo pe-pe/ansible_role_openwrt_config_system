@@ -1,0 +1,24 @@
+---
+galaxy_info:
+  role_name: openwrt_config_system
+  namespace: pe_pe
+  author: PePe
+  description: |
+    OpenWrt configuration via Ansible. This roles configures main system settings.
+  company: none
+  license: MIT
+
+  min_ansible_version: 2.8
+
+  platforms:
+    - name: OpenWrt
+      versions:
+        - all
+
+  galaxy_tags:
+    - openwrt
+    - config
+    - router
+    - system
+
+dependencies: []

@@ -1,0 +1,26 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  vars_files:
+    - vars.yml
+
+  roles:
+    - role: ansible_role_openwrt
+
+  tasks:
+    # system config test
+    - name: Check if system settings were set
+      command: "uci show system"
+      register: uci_show_system_result
+      failed_when:
+        - not "hostname='" ~ openwrt_config_system.hostname ~ "'" in uci_show_system_result.stdout or
+          not "timezone='" ~ openwrt_config_system.timezone ~ "'" in uci_show_system_result.stdout or
+          not "zonename='" ~ openwrt_config_system.zonename ~ "'" in uci_show_system_result.stdout or
+          not "conloglevel='" ~ openwrt_config_system.conloglevel ~ "'" in uci_show_system_result.stdout or
+          not "cronloglevel='" ~ openwrt_config_system.cronloglevel ~ "'" in uci_show_system_result.stdout or
+          not "log_ip='" ~ openwrt_config_system.log_ip ~ "'" in uci_show_system_result.stdout or
+          not "log_proto='" ~ openwrt_config_system.log_proto ~ "'" in uci_show_system_result.stdout or
+          not "system.ntp.enabled='" ~ openwrt_config_system.ntp.enabled ~ "'" in uci_show_system_result.stdout or
+          not "system.ntp.enable_server='" ~ openwrt_config_system.ntp.enable_server ~ "'" in uci_show_system_result.stdout
+      changed_when: false
