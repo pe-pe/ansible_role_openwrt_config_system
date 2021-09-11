@@ -1,8 +1,8 @@
 OpenWRT Config System
 =========
 
-[![Role](https://img.shields.io/ansible/role/56168.svg)](https://galaxy.ansible.com/pe_pe/base_packages/)
-[![Quality](https://img.shields.io/ansible/quality/56168.svg)](https://galaxy.ansible.com/pe_pe/base_packages/)
+[![Role](https://img.shields.io/ansible/role/56168.svg)](https://galaxy.ansible.com/pe_pe/openwrt_config_system/)
+[![Quality](https://img.shields.io/ansible/quality/56168.svg)](https://galaxy.ansible.com/pe_pe/openwrt_config_system/)
 [![CI](https://github.com/pe-pe/ansible_role_openwrt_config_system/workflows/CI/badge.svg)](https://github.com/pe-pe/ansible_role_openwrt_config_system/actions)
 
 Ansible role that configures basic system settings of OpenWRT device (mainly those which are usually defined in `/etc/config/system`).
@@ -54,18 +54,16 @@ myrouter
 ```yaml
 ---
 roles:
-- name: ansible_role_openwrt
-  src: gekmihesg.openwrt
-- name: ansible_role_openwrt_config_system
-  src: pe_pe.openwrt_config_system
+- name: gekmihesg.openwrt
+- name: pe_pe.openwrt_config_system
 ```
 `./site.yml`
 ```yaml
 ---
 - hosts: all
   roles:
-    - role: ansible_role_openwrt
-    - role: ansible_role_openwrt_config_system
+    - role: gekmihesg.openwrt
+    - role: pe_pe.openwrt_config_system
 ```
 `./ansible.cfg`
 ```ini
