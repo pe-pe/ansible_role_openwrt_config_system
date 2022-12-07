@@ -18,6 +18,7 @@ jobs:
     strategy:
       matrix:
         distribution:
+          - openwrtorg/rootfs:x86-64-openwrt-22.03  # linux/amd64
           - openwrtorg/rootfs:x86-64-openwrt-21.02  # linux/amd64
           - openwrtorg/rootfs:x86-64-openwrt-19.07  # linux/amd64
 
