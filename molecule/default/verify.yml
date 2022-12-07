@@ -22,5 +22,7 @@
           not "log_ip='" ~ openwrt_config_system.log_ip ~ "'" in uci_show_system_result.stdout or
           not "log_proto='" ~ openwrt_config_system.log_proto ~ "'" in uci_show_system_result.stdout or
           not "system.ntp.enabled='" ~ openwrt_config_system.ntp.enabled ~ "'" in uci_show_system_result.stdout or
-          not "system.ntp.enable_server='" ~ openwrt_config_system.ntp.enable_server ~ "'" in uci_show_system_result.stdout
+          not "system.ntp.enable_server='" ~ openwrt_config_system.ntp.enable_server ~ "'" in uci_show_system_result.stdout or
+          not "system.ntp.server='" ~ openwrt_config_system.ntp.servers[0] ~ "' '" ~ openwrt_config_system.ntp.servers[1] ~ "'"
+            in uci_show_system_result.stdout
       changed_when: false

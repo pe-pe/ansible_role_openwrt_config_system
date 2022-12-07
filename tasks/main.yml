@@ -34,6 +34,16 @@
       enable_server: "{{ openwrt_config_system.ntp.enable_server | default(0) }}"
   when: openwrt_config_system.ntp is defined
 
+# Separate section for NTP servers to avoid changing defaults in case custom are not set
+- name: Set NTP servers
+  uci:
+    command: section
+    key: system.ntp
+    type: timeserver
+    value:
+      server: "{{ openwrt_config_system.ntp.servers }}"
+  when: openwrt_config_system.ntp.servers is defined
+
 - name: Commit UCI changes done
   uci:
     command: commit
