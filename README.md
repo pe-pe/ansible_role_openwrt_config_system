@@ -26,6 +26,7 @@ openwrt_config_system:
   ntp:
     enabled: 1
     enable_server: 0
+    servers: ["0.europe.pool.ntp.org", "1.europe.pool.ntp.org"]
 ```
 If `openwrt_config_system` configuration variable is not present - no changes are made by role.
 
